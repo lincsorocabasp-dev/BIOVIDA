@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioVida — Natural Mineral Water from Serra Negra · Export Opportunity</title>
+<style>
+  :root {
+    --navy:    #0A1628;
+    --navyMid: #122040;
+    --navyLt:  #1C3058;
+    --gold:    #C9A84C;
+    --goldLt:  #E8C97A;
+    --goldPale:#F5E9C0;
+    --teal:    #00BCD4;
+    --green:   #1A7A4A;
+    --white:   #FFFFFF;
+    --offwhite:#F8F6F0;
+    --gray:    #8A9AB0;
+    --darkText:#1A2540;
+    --r: 0.75rem;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+  .label  { font-family: 'Arial', sans-serif; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .display{ font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; }
+  .h2     { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.15; }
+  .h3     { font-size: 1.1rem; font-weight: 700; font-family: 'Arial', sans-serif; }
+  .body   { font-family: 'Arial', sans-serif; font-size: .95rem; line-height: 1.7; color: #c8d4e8; }
+  .body-lg{ font-family: 'Arial', sans-serif; font-size: 1.05rem; line-height: 1.75; color: #c8d4e8; }
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { color: var(--goldLt); }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 5rem 0; }
+  .section-light { background: var(--offwhite); color: var(--darkText); }
+  .section-light .body, .section-light .body-lg { color: #445; }
+  .section-light .label { color: var(--green); }
+  .section-light .h2, .section-light .h3 { color: var(--darkText); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  @media(max-width:900px){ .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; } .grid-3{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:560px){ .grid-3{ grid-template-columns:1fr; } }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,22,40,.96); border-bottom: 1px solid rgba(201,168,76,.25); backdrop-filter: blur(12px); padding: .9rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: .7rem; font-size: 1.25rem; font-weight: 700; color: var(--teal); font-family: 'Arial', sans-serif; }
+  .nav-logo .drop { width: 32px; height: 38px; background: var(--teal); clip-path: polygon(50% 0%, 90% 38%, 72% 100%, 28% 100%, 10% 38%); position: relative; display: flex; align-items: center; justify-content: center; }
+  .nav-logo .drop::after { content: ''; width: 14px; height: 17px; background: var(--green); clip-path: polygon(50% 0%, 90% 38%, 72% 100%, 28% 100%, 10% 38%); position: absolute; }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a { font-family:'Arial',sans-serif; font-size:.82rem; color:var(--gray); letter-spacing:.04em; transition:color .2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-lang { display:flex; gap:.4rem; }
+  .nav-lang a { font-family:'Arial',sans-serif; font-size:.75rem; font-weight:700; color:var(--gray); border:1px solid rgba(201,168,76,.3); padding:.25rem .55rem; border-radius:4px; }
+  .nav-lang a.active { background:var(--gold); color:var(--navy); border-color:var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy); font-family:'Arial',sans-serif; font-size:.8rem; font-weight:700; padding: .5rem 1.2rem; border-radius:4px; letter-spacing:.05em; transition: background .2s; margin-left:1rem; }
+  .nav-cta:hover { background: var(--goldLt); color: var(--navy); }
+  @media(max-width:900px){ .nav-links{display:none;} }
+
+  #hero { min-height: 100vh; position: relative; overflow: hidden; display:flex; align-items:center; padding-top:5rem; }
+  .hero-video-bg { position:absolute; inset:0; width:100%; height:100%; z-index:0; overflow:hidden; }
+  .hero-video-bg iframe { position:absolute; top:50%; left:50%; width:100vw; height:56.25vw; min-height:100vh; min-width:177.78vh; transform:translate(-50%,-50%); border:0; pointer-events:none; }
+  .hero-video-overlay { position:absolute; inset:0; z-index:1; background: linear-gradient(135deg, rgba(10,22,40,.92) 0%, rgba(18,32,64,.82) 55%, rgba(10,22,40,.55) 100%); }
+  .hero-content-full { position:relative; z-index:2; max-width:720px; }
+  #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,.06) 0%, transparent 60%), radial-gradient(ellipse at 10% 80%, rgba(0,188,212,.07) 0%, transparent 50%); pointer-events: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+  .hero-eyebrow { display:flex; align-items:center; gap:.75rem; margin-bottom:1.5rem; }
+  .hero-eyebrow .pill { background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.4); color: var(--goldLt); font-family:'Arial',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; padding:.3rem .8rem; border-radius:20px; }
+  .hero-title { margin-bottom:1.5rem; }
+  .hero-title em { color: var(--gold); font-style:normal; }
+  .hero-sub { margin-bottom:2.5rem; }
+  .hero-kpis { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-bottom:2.5rem; }
+  .kpi { background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.2); border-radius: var(--r); padding:1rem .8rem; text-align:center; }
+  .kpi-val { font-size:1.5rem; font-weight:700; color: var(--gold); font-family:'Arial',sans-serif; line-height:1.1; }
+  .kpi-lbl { font-family:'Arial',sans-serif; font-size:.68rem; color: var(--gray); margin-top:.25rem; letter-spacing:.03em; }
+  .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn-primary { background: var(--gold); color: var(--navy); font-family:'Arial',sans-serif; font-weight:700; font-size:.9rem; padding:.85rem 2rem; border-radius:4px; letter-spacing:.04em; transition: background .2s, transform .15s; display:inline-block; }
+  .btn-primary:hover { background:var(--goldLt); color:var(--navy); transform:translateY(-1px); }
+  .btn-outline { border: 1px solid rgba(201,168,76,.5); color: var(--goldLt); font-family:'Arial',sans-serif; font-weight:600; font-size:.9rem; padding:.85rem 2rem; border-radius:4px; transition: border-color .2s, color .2s; display:inline-block; }
+  .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+
+  .hero-visual { position: relative; display:flex; flex-direction:column; gap:1rem; align-items:center; }
+  .hero-img-main { width:100%; max-width:480px; border-radius:12px; overflow:hidden; box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(201,168,76,.15); background:linear-gradient(135deg,#122040,#1C3058); height:340px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .hero-img-main .ph { font-family:'Arial',sans-serif; color:var(--gray); font-size:.85rem; text-align:center; padding:1rem; }
+  .hero-img-main video { width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-img-main iframe { width:100%; height:100%; border:0; display:block; }
+  .cert-strip { display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; background: rgba(255,255,255,.03); border-radius:8px; padding:.75rem 1rem; width:100%; }
+  .cert-tag { background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25); color:var(--goldLt); font-family:'Arial',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.08em; padding:.25rem .6rem; border-radius:4px; }
+  @media(max-width:900px){ .hero-grid{ grid-template-columns:1fr; } .hero-visual{ order:-1; } }
+
+  .ticker { background: var(--gold); padding:.6rem 0; overflow:hidden; white-space:nowrap; }
+  .ticker-inner { display:inline-block; animation: ticker 30s linear infinite; font-family:'Arial',sans-serif; font-size:.8rem; font-weight:700; color: var(--navy); letter-spacing:.05em; }
+  .ticker-inner span { margin:0 2.5rem; }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  .sec-head { text-align:center; margin-bottom:3.5rem; }
+  .sec-head .h2 { margin:.5rem 0 1rem; }
+  .sec-head p { max-width:640px; margin:0 auto; }
+  .gold-rule { width:60px; height:3px; background:var(--gold); margin:.8rem auto 0; border-radius:2px; }
+
+  .chem-table { width:100%; border-collapse:collapse; font-family:'Arial',sans-serif; font-size:.9rem; }
+  .chem-table th { background:var(--gold); color:var(--navy); padding:.7rem 1rem; text-align:left; font-size:.75rem; letter-spacing:.05em; }
+  .chem-table td { padding:.65rem 1rem; border-bottom:1px solid rgba(255,255,255,.06); }
+  .chem-table tr:nth-child(even) td { background:rgba(255,255,255,.025); }
+  .chem-table .highlight td { background:rgba(201,168,76,.08); color:var(--goldLt); font-weight:700; }
+  .profile-card { background:var(--navyMid); border:1px solid rgba(201,168,76,.2); border-radius:var(--r); padding:1.5rem; }
+  .ph-big { font-size:3.5rem; font-weight:700; color:var(--teal); font-family:'Arial',sans-serif; line-height:1; }
+  .ph-label { font-family:'Arial',sans-serif; font-size:.8rem; color:var(--gray); margin-top:.3rem; }
+
+  .vs-table { width:100%; border-collapse:collapse; font-family:'Arial',sans-serif; font-size:.86rem; }
+  .vs-table th { background:var(--navyLt); color:var(--gold); padding:.7rem .9rem; text-align:center; font-size:.72rem; letter-spacing:.04em; border-bottom:2px solid var(--gold); }
+  .vs-table th:first-child { text-align:left; }
+  .vs-table td { padding:.6rem .9rem; text-align:center; border-bottom:1px solid rgba(255,255,255,.05); }
+  .vs-table td:first-child { text-align:left; }
+  .vs-table tr.biovida td { background:rgba(201,168,76,.08); color:var(--gold); font-weight:700; }
+  .vs-table tr.biovida td:first-child::before { content:'★ '; }
+
+  .product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; }
+  .product-card { background:var(--navyMid); border:1px solid rgba(201,168,76,.15); border-radius:var(--r); overflow:hidden; transition: transform .25s, box-shadow .25s; }
+  .product-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.4); }
+  .product-card .pc-img { width:100%; height:200px; background:linear-gradient(135deg,#122040,#1C3058); display:flex; align-items:center; justify-content:center; font-family:'Arial',sans-serif; color:var(--gray); font-size:.78rem; text-align:center; padding:1rem; }
+  .product-card .pc-img.has-photo { background:#F2F2F0; padding:0; }
+  .product-card .pc-img.has-photo img { width:100%; height:100%; object-fit:contain; display:block; }
+  .product-card .pc-body { padding:1.1rem; }
+  .product-card .pc-name { font-size:1rem; font-weight:700; margin-bottom:.3rem; }
+  .product-card .pc-desc { font-family:'Arial',sans-serif; font-size:.82rem; color:var(--gray); }
+  .pc-specs { display:flex; gap:.5rem; margin-top:.75rem; flex-wrap:wrap; }
+  .pc-spec { background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.2); border-radius:4px; padding:.3rem .5rem; font-family:'Arial',sans-serif; font-size:.68rem; color:var(--goldLt); }
+  .catalog-cta { text-align:center; margin-top:2.5rem; }
+  .catalog-cta .body { margin-bottom:1rem; }
+
+  .container-card { background:var(--navyMid); border:1px solid rgba(201,168,76,.15); border-radius:var(--r); padding:1.5rem; text-align:center; }
+  .container-card .icon { font-size:2.2rem; margin-bottom:.75rem; }
+  .container-card .big { font-size:1.6rem; font-weight:700; color:var(--gold); font-family:'Arial',sans-serif; }
+  .container-card .sub { font-family:'Arial',sans-serif; font-size:.78rem; color:var(--gray); margin-top:.2rem; }
+
+  .market-card { border:1px solid rgba(201,168,76,.2); border-radius:var(--r); padding:1.5rem; }
+  .market-card .flag { font-size:2rem; margin-bottom:.5rem; }
+  .market-card .mc-name { font-family:'Arial',sans-serif; font-weight:700; font-size:1rem; margin-bottom:.6rem; color:var(--gold); }
+  .market-card .mc-body { font-family:'Arial',sans-serif; font-size:.85rem; color:var(--gray); line-height:1.6; }
+
+  .partner-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  @media(max-width:900px){ .partner-grid{ grid-template-columns:1fr; } }
+  .partner-card { background:var(--navyMid); border:1px solid rgba(201,168,76,.2); border-radius:var(--r); padding:1.75rem; display:flex; flex-direction:column; }
+  .partner-card .pc-icon { font-size:2rem; margin-bottom:.75rem; }
+  .partner-card .pc-title { font-family:'Arial',sans-serif; font-weight:700; font-size:1.05rem; color:var(--goldLt); margin-bottom:.6rem; }
+  .partner-card .pc-text { font-family:'Arial',sans-serif; font-size:.85rem; color:var(--gray); line-height:1.65; flex:1; }
+  .partner-card .pc-foot { margin-top:1rem; font-family:'Arial',sans-serif; font-size:.75rem; color:var(--gold); font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+
+  .log-card { display:flex; gap:1rem; align-items:flex-start; background:var(--navyMid); border:1px solid rgba(201,168,76,.15); border-radius:var(--r); padding:1.1rem 1.25rem; }
+  .log-icon { font-size:1.5rem; flex-shrink:0; }
+  .log-title { font-family:'Arial',sans-serif; font-weight:700; font-size:.92rem; color:var(--white); margin-bottom:.25rem; }
+  .log-stat { color:var(--gold); font-weight:700; margin-left:.4rem; }
+  .log-body { font-family:'Arial',sans-serif; font-size:.82rem; color:var(--gray); line-height:1.55; }
+
+  #contact { background:linear-gradient(135deg, var(--navyMid) 0%, var(--navy) 100%); border-top:1px solid rgba(201,168,76,.2); }
+  .contact-box { background:var(--navyLt); border:1px solid rgba(201,168,76,.25); border-radius:12px; padding:3rem; text-align:center; max-width:720px; margin:0 auto; }
+  .contact-box .h2 { margin:.5rem 0 1rem; }
+  .contact-links { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-top:2rem; }
+  .contact-item { font-family:'Arial',sans-serif; font-size:.9rem; color:var(--gray); display:flex; align-items:center; gap:.5rem; }
+  .contact-item strong { color:var(--white); }
+  .contact-item a { color:var(--teal); }
+  .contact-cta { margin-top:2rem; }
+  .btn-big { display:inline-block; background:var(--gold); color:var(--navy); font-family:'Arial',sans-serif; font-weight:700; font-size:1rem; padding:1rem 2.5rem; border-radius:5px; letter-spacing:.04em; transition: background .2s, transform .15s; }
+  .btn-big:hover { background:var(--goldLt); color:var(--navy); transform:translateY(-2px); }
+
+  footer { background:var(--navy); border-top:1px solid rgba(255,255,255,.05); padding:2rem; text-align:center; font-family:'Arial',sans-serif; font-size:.78rem; color:var(--gray); }
+  footer a { color:var(--teal); }
+  footer .footer-logo { font-size:1rem; font-weight:700; color:var(--teal); margin-bottom:.5rem; }
+
+  .fade { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
+  .fade.visible { opacity:1; transform:translateY(0); }
+
+  #scrollTop { position:fixed; bottom:2rem; right:2rem; z-index:99; width:42px; height:42px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; color:var(--navy); font-size:1.2rem; display:none; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.3); transition: background .2s; }
+  #scrollTop:hover { background:var(--goldLt); }
+  #scrollTop.show { display:flex; }
+
+  .disclaimer { font-family:'Arial',sans-serif; font-size:.72rem; color:var(--gray); text-align:center; max-width:760px; margin:1.5rem auto 0; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><div class="drop"></div>BioVida</div>
+  <div class="nav-links">
+    <a href="#water">The Water</a>
+    <a href="#products">Products</a>
+    <a href="#markets">Markets</a>
+    <a href="#export">Export</a>
+    <a href="#partner">Partnership</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center">
+    <div class="nav-lang">
+      <a href="index.html">PT</a>
+      <a href="index-en.html" class="active">EN</a>
+      <a href="index-ar.html">AR</a>
+    </div>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-video-bg">
+    <iframe src="https://www.youtube.com/embed/e3NOJESYH8A?autoplay=1&mute=1&loop=1&playlist=e3NOJESYH8A&controls=0&showinfo=0&rel=0&modestbranding=1" title="BioVida — Presentation Video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div class="hero-video-overlay"></div>
+  <div class="container">
+    <div class="hero-content-full">
+      <div class="hero-eyebrow"><span class="pill">Export Opportunity</span></div>
+      <div class="display hero-title">Pure water from<br><em>Serra Negra</em><br>to the world</div>
+      <p class="body-lg hero-sub">Natural mineral water with ultra-low sodium (6.12 mg/L) and pH 6.16, drawn from an artesian spring for over 40 years — now preparing to supply the growing demand for quality hydration in the Middle East.</p>
+      <div class="hero-kpis">
+        <div class="kpi"><div class="kpi-val">6.12</div><div class="kpi-lbl">Sodium mg/L</div></div>
+        <div class="kpi"><div class="kpi-val">6.16</div><div class="kpi-lbl">pH</div></div>
+        <div class="kpi"><div class="kpi-val">1984</div><div class="kpi-lbl">ANM Mining Concession</div></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#export" class="btn-primary">View Export Feasibility</a>
+        <a href="#partner" class="btn-outline">How to Participate →</a>
+      </div>
+      <div class="cert-strip" style="margin-top:2rem;justify-content:flex-start">
+        <span class="cert-tag">ANM</span>
+        <span class="cert-tag">LAMIN/CPRM</span>
+        <span class="cert-tag">CETESB</span>
+        <span class="cert-tag">Health Authority</span>
+        <span class="cert-tag">Portaria 554</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>✦ SODIUM 6.12 mg/L — ULTRA-LOW</span>
+    <span>✦ pH 6.16 — NATURAL BALANCE</span>
+    <span>✦ ARTESIAN SPRING IN SERRA NEGRA/SP SINCE 1984</span>
+    <span>✦ PORT OF SANTOS ~240 KM FROM THE SPRING</span>
+    <span>✦ SEA TRANSIT SANTOS → PERSIAN GULF ~20-25 DAYS</span>
+    <span>✦ SODIUM 6.12 mg/L — ULTRA-LOW</span>
+    <span>✦ pH 6.16 — NATURAL BALANCE</span>
+    <span>✦ ARTESIAN SPRING IN SERRA NEGRA/SP SINCE 1984</span>
+    <span>✦ PORT OF SANTOS ~240 KM FROM THE SPRING</span>
+    <span>✦ SEA TRANSIT SANTOS → PERSIAN GULF ~20-25 DAYS</span>
+  </div>
+</div>
+
+<section id="water" class="section">
+  <div class="container">
+    <div class="sec-head fade">
+      <div class="label">Scientific Profile</div>
+      <div class="h2">Why pH 6.16 and Sodium 6.12 mg/L<br>make a difference</div>
+      <div class="gold-rule"></div>
+      <p class="body" style="margin-top:1rem">Data certified by LAMIN/CPRM Bulletin No. 1324/2023 — the official laboratory of the Geological Survey of Brazil, linked to the ANM mining process. This is not a marketing claim — it is an official technical report.</p>
+    </div>
+    <div class="grid-2 fade">
+      <div>
+        <div class="profile-card" style="margin-bottom:1.5rem">
+          <div class="label" style="margin-bottom:.5rem">Key Differentiator</div>
+          <div class="ph-big">6,12</div>
+          <div class="ph-label">mg/L Sodium — Ultra-low</div>
+          <p class="body" style="margin-top:.75rem;font-size:.85rem">In the Gulf region, where extreme heat (above 45°C) is constant, low-sodium water is often recommended for healthy hydration. BioVida shows a lower sodium content than reference international brands, as shown in the comparison below.</p>
+          <div style="display:flex;gap:1rem;margin-top:1.25rem">
+            <div style="flex:1;text-align:center;background:rgba(201,168,76,.08);border-radius:6px;padding:.75rem">
+              <div style="font-size:1.4rem;font-weight:700;color:var(--teal);font-family:Arial">6,16</div>
+              <div style="font-family:Arial;font-size:.68rem;color:var(--gray);margin-top:.2rem">pH</div>
+            </div>
+            <div style="flex:1;text-align:center;background:rgba(201,168,76,.08);border-radius:6px;padding:.75rem">
+              <div style="font-size:1.4rem;font-weight:700;color:var(--teal);font-family:Arial">21,5°C</div>
+              <div style="font-family:Arial;font-size:.68rem;color:var(--gray);margin-top:.2rem">Spring temp.</div>
+            </div>
+            <div style="flex:1;text-align:center;background:rgba(201,168,76,.08);border-radius:6px;padding:.75rem">
+              <div style="font-size:1.4rem;font-weight:700;color:var(--teal);font-family:Arial">81,2</div>
+              <div style="font-family:Arial;font-size:.68rem;color:var(--gray);margin-top:.2rem">µS/cm Conductivity</div>
+            </div>
+          </div>
+        </div>
+        <table class="vs-table">
+          <thead><tr><th style="text-align:left">Brand</th><th>Sodium mg/L</th><th>pH</th><th>Origin</th></tr></thead>
+          <tbody>
+            <tr class="biovida"><td>BioVida</td><td>6,12</td><td>6,16</td><td>Serra Negra 🇧🇷</td></tr>
+            <tr><td>Evian</td><td>~7,0</td><td>~7,2</td><td>French Alps 🇫🇷</td></tr>
+            <tr><td>Voss</td><td>~4,0</td><td>~6,0</td><td>Norway 🇳🇴</td></tr>
+            <tr><td>Acqua Panna</td><td>~6,8</td><td>~7,7</td><td>Tuscany 🇮🇹</td></tr>
+          </tbody>
+        </table>
+        <p class="body" style="font-size:.72rem;margin-top:.5rem;color:var(--gray)">Competing brand values obtained from public labels and market sources; may vary by batch. BioVida values per LAMIN/CPRM report 1324/2023.</p>
+      </div>
+      <div>
+        <div style="font-family:Arial;font-size:.75rem;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:.75rem">OFFICIAL CHEMICAL COMPOSITION — LAMIN/ANM 1324/2023</div>
+        <table class="chem-table">
+          <thead><tr><th>Parameter</th><th>Value (mg/L)</th></tr></thead>
+          <tbody>
+            <tr class="highlight"><td>Sodium (Na⁺)</td><td>6.120</td></tr>
+            <tr><td>Bicarbonate</td><td>35.26</td></tr>
+            <tr><td>Potassium</td><td>1.600</td></tr>
+            <tr><td>Calcium</td><td>4.800</td></tr>
+            <tr><td>Magnesium</td><td>2.230</td></tr>
+            <tr><td>Chloride</td><td>1.91</td></tr>
+            <tr><td>Sulfate</td><td>0.42</td></tr>
+            <tr><td>Nitrate</td><td>5.59</td></tr>
+            <tr><td>Fluoride</td><td>0.02</td></tr>
+            <tr><td>Strontium</td><td>0.060</td></tr>
+          </tbody>
+        </table>
+        <p class="body" style="font-size:.75rem;margin-top:.75rem;color:var(--gray)">Source: ANM Technical Opinion No. 143/2024/DIFIS-SP/GER-SP · On-site study conducted on 12/05/2023.</p>
+        <div style="margin-top:1.25rem;background:rgba(26,122,74,.08);border:1px solid rgba(26,122,74,.3);border-radius:8px;padding:1rem">
+          <div style="font-family:Arial;font-size:.8rem;font-weight:700;color:#4ade80;margin-bottom:.4rem">Classification</div>
+          <div style="font-family:Arial;font-size:.88rem;color:var(--white)">"Fluoridated Mineral Water" — potable, compliant with ANVISA RDC 717/2022 and 724/2022 standards. LAMIN bacteriological analysis showed no detection of coliforms, E. coli or Pseudomonas.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section" style="background:var(--navyMid)">
+  <div class="container">
+    <div class="sec-head fade">
+      <div class="label">Product Line</div>
+      <div class="h2">BioVida Portfolio</div>
+      <div class="gold-rule"></div>
+      <p class="body" style="margin-top:1rem">Formats for different channels — from hospitality to family retail — all sharing the same spring water with ultra-low sodium and pH 6.16.</p>
+    </div>
+    <div class="product-grid fade">
+      <div class="product-card">
+        <div class="pc-img has-photo"><img src="media/copo_200ml.png" alt="BioVida Cup 200ml"></div>
+        <div class="pc-body">
+          <div class="pc-name">Cup 200ml — Still</div>
+          <div class="pc-desc">Hospitality format. Ideal for hotels, restaurants and wellness services.</div>
+          <div class="pc-specs"><span class="pc-spec">Sodium 6.12 mg/L</span><span class="pc-spec">pH 6.16</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-img has-photo"><img src="media/garrafa_510ml.png" alt="BioVida Bottle 510ml Still"></div>
+        <div class="pc-body">
+          <div class="pc-name">Bottle 510ml — Still</div>
+          <div class="pc-desc">Core export SKU. Premium retail, hotels and wellness centers.</div>
+          <div class="pc-specs"><span class="pc-spec">Sodium 6.12 mg/L</span><span class="pc-spec">pH 6.16</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-img has-photo"><img src="media/garrafa_510ml_gas.png" alt="BioVida Bottle 510ml Sparkling"></div>
+        <div class="pc-body">
+          <div class="pc-name">Bottle 510ml — Sparkling</div>
+          <div class="pc-desc">Fine dining. Pairs with meals without altering flavour profile.</div>
+          <div class="pc-specs"><span class="pc-spec">Sodium 6.12 mg/L</span><span class="pc-spec">pH 6.16</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-img has-photo"><img src="media/garrafa_1500ml.png" alt="BioVida Bottle 1.5L"></div>
+        <div class="pc-body">
+          <div class="pc-name">Bottle 1.5L — Still &amp; Sparkling</div>
+          <div class="pc-desc">Family format for retail distribution and hypermarket chains.</div>
+          <div class="pc-specs"><span class="pc-spec">Sodium 6.12 mg/L</span><span class="pc-spec">pH 6.16</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-img has-photo"><img src="media/galao_6l_v2.png" alt="BioVida Gallon 6L"></div>
+        <div class="pc-body">
+          <div class="pc-name">Gallon 6 liters — Still</div>
+          <div class="pc-desc">High-volume household and corporate use, same spring purity.</div>
+          <div class="pc-specs"><span class="pc-spec">Sodium 6.12 mg/L</span><span class="pc-spec">pH 6.16</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-img has-photo"><img src="media/galao_20l.png" alt="BioVida Returnable Jug 10L/20L"></div>
+        <div class="pc-body">
+          <div class="pc-name">BoaVida Line — Returnable 10L &amp; 20L</div>
+          <div class="pc-desc">Returnable packaging, a sustainable option for large-scale distribution.</div>
+          <div class="pc-specs"><span class="pc-spec">Sodium 6.12 mg/L</span><span class="pc-spec">pH 6.16</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-cta fade">
+      <p class="body">Full catalog with chemical composition, physicochemical characteristics and specifications for each product, available for download.</p>
+      <a href="downloads/Catalogo_BioVida.docx" class="btn-primary" download>⬇ Download Full Catalog (.docx)</a>
+    </div>
+  </div>
+</section>
+
+<section id="markets" class="section section-light">
+  <div class="container">
+    <div class="sec-head fade">
+      <div class="label">Target Market</div>
+      <div class="h2" style="color:var(--darkText)">Why the Middle East</div>
+      <div class="gold-rule"></div>
+      <p class="body" style="margin-top:1rem">The Persian Gulf region relies heavily on desalinated and imported water for human consumption, in an extreme-heat climate that increases demand for constant, quality hydration.</p>
+    </div>
+    <div class="grid-3 fade">
+      <div class="market-card" style="background:var(--navy)">
+        <div class="flag">🇦🇪</div>
+        <div class="mc-name">United Arab Emirates</div>
+        <div class="mc-body">One of the highest per-capita consumers of bottled water in the world, largely due to climate and reliance on desalination. Bottled water market estimated above USD 4 billion, with projected growth in coming years.</div>
+      </div>
+      <div class="market-card" style="background:var(--navy)">
+        <div class="flag">🇶🇦</div>
+        <div class="mc-name">Qatar</div>
+        <div class="mc-body">Expanding luxury hospitality and tourism market, with strong demand for premium hydration products in hotels and international events.</div>
+      </div>
+      <div class="market-card" style="background:var(--navy)">
+        <div class="flag">🌍</div>
+        <div class="mc-name">Persian Gulf (regional)</div>
+        <div class="mc-body">Region historically lacking its own quality freshwater sources, dependent on imports and desalination — creating structural room for certified natural mineral water of foreign origin.</div>
+      </div>
+    </div>
+    <p class="disclaimer">General reference market data; updated, country-specific market research is recommended before commercial decisions.</p>
+  </div>
+</section>
+
+<section id="export" class="section">
+  <div class="container">
+    <div class="sec-head fade">
+      <div class="label">Export Feasibility</div>
+      <div class="h2">From Serra Negra to the Persian Gulf</div>
+      <div class="gold-rule"></div>
+      <p class="body" style="margin-top:1rem">The spring is strategically positioned inland in São Paulo state, with direct access to the largest port in Latin America.</p>
+    </div>
+    <div class="grid-2 fade" style="gap:3rem;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="log-card">
+          <div class="log-icon">📍</div>
+          <div><div class="log-title">BioVida Spring — Serra Negra/SP</div><div class="log-body">Rua Irineu Geraldi, 561 · Núcleo do Giraldi · CEP 13930-000</div></div>
+        </div>
+        <div class="log-card">
+          <div class="log-icon">🚛</div>
+          <div><div class="log-title">Port of Santos <span class="log-stat">~240 km</span></div><div class="log-body">Largest port in Latin America, with continuous operation and connections to multiple international destinations via container ship.</div></div>
+        </div>
+        <div class="log-card">
+          <div class="log-icon">🚢</div>
+          <div><div class="log-title">Sea transit <span class="log-stat">~20-25 days</span></div><div class="log-body">Estimated travel time Santos → Persian Gulf ports (Jebel Ali/Dubai, Doha) via FCL container.</div></div>
+        </div>
+        <div class="log-card">
+          <div class="log-icon">📋</div>
+          <div><div class="log-title">UAE import tariff</div><div class="log-body">Standard GCC tariff is 5% on CIF value for most products; specific classifications and exemptions should be confirmed with a local customs broker before shipment.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="grid-4" style="grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="container-card"><div class="icon">📦</div><div class="big">20'/40'</div><div class="sub">FCL Dry Container</div></div>
+          <div class="container-card"><div class="icon">🌊</div><div class="big">CIF/FOB</div><div class="sub">Negotiable terms</div></div>
+          <div class="container-card"><div class="icon">📜</div><div class="big">Desde 1984</div><div class="sub">ANM Mining Concession No. 554</div></div>
+          <div class="container-card"><div class="icon">✅</div><div class="big">Licensed</div><div class="sub">CETESB · Health authority active</div></div>
+        </div>
+        <div style="margin-top:1rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:1.25rem">
+          <div style="font-family:Arial;font-size:.8rem;font-weight:700;color:var(--gold);margin-bottom:.5rem">✦ Logistics argument</div>
+          <div class="body" style="font-size:.85rem">Proximity to the Port of Santos reduces inland transport cost and time, a relevant competitive factor versus other premium mineral water origins farther from shipping ports.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partner" class="section section-light">
+  <div class="container">
+    <div class="sec-head fade">
+      <div class="label">Opportunity</div>
+      <div class="h2" style="color:var(--darkText)">How to Participate in This Project</div>
+      <div class="gold-rule"></div>
+      <p class="body" style="margin-top:1rem">We are seeking partners to enable and accelerate BioVida&#x2019;s first export operation. There are three possible forms of participation — all subject to negotiation and formal structuring.</p>
+    </div>
+    <div class="partner-grid fade">
+      <div class="partner-card">
+        <div class="pc-icon">💰</div>
+        <div class="pc-title">Capital for the Operation</div>
+        <div class="pc-text">Capital contribution to finance containers, international logistics, customs brokerage and working capital for the first export operation, with structured return on the operation&#x2019;s result.</div>
+        <div class="pc-foot">Under negotiation</div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-icon">🤝</div>
+        <div class="pc-title">Commercial Partnership / Distribution</div>
+        <div class="pc-text">Companies and distributors in the Middle East interested in representing the BioVida brand locally, with distribution agreement and territorial exclusivity to be defined.</div>
+        <div class="pc-foot">Under negotiation</div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-icon">📈</div>
+        <div class="pc-title">Equity in the Operation</div>
+        <div class="pc-text">Investors interested in equity or financial participation in the export operation, subject to full due diligence and formal legal structuring.</div>
+        <div class="pc-foot">Under negotiation</div>
+      </div>
+    </div>
+    <p class="disclaimer">This material is a preliminary informational presentation and does not constitute a public investment offer, prospectus or binding commitment. All forms of participation are subject to negotiation, due diligence and contractual formalization.</p>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-box fade">
+      <div class="label">Contact</div>
+      <div class="h2" style="margin:.5rem 0 1rem">Request More Information</div>
+      <p class="body">This presentation is shared by <strong style="color:var(--white)">CBT Group</strong> on behalf of Fonte BioVida (Serra Negra/SP). Supporting materials — technical reports, regulatory documentation and projections — available upon request.</p>
+      <div class="contact-links">
+        <div class="contact-item">👤 <strong>Anderson de Andrade Oliveira</strong></div>
+        <div class="contact-item">📍 <strong>Serra Negra — São Paulo — Brasil</strong></div>
+        <div class="contact-item">🌐 <a href="https://fontebiovida.com.br/" target="_blank"><strong>fontebiovida.com.br</strong></a></div>
+      </div>
+      <div class="contact-cta">
+        <a href="mailto:contato@fontebiovida.com.br?subject=BioVida — Export/Partnership Interest" class="btn-big">📩 Request More Information</a>
+      </div>
+      <p style="font-family:Arial;font-size:.75rem;color:var(--gray);margin-top:1.5rem">Preliminary informational material. Does not constitute a public investment offer. Values and projections subject to confirmation and due diligence.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">💧 BioVida</div>
+  <p>Serra Negra — São Paulo — Brasil · Fonte Santa Terezinha</p>
+  <p style="margin-top:.5rem"><a href="https://fontebiovida.com.br/" target="_blank">fontebiovida.com.br</a></p>
+  <p style="margin-top:1rem;font-size:.7rem;color:#445">© 2026 BioVida · Preliminary informational material · All rights reserved</p>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  window.addEventListener('scroll', () => { document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 500); });
+  const fades = document.querySelectorAll('.fade');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  fades.forEach(el => observer.observe(el));
+  const inner = document.querySelector('.ticker-inner');
+  inner.innerHTML = inner.innerHTML + inner.innerHTML;
+</script>
+</body>
+</html>
